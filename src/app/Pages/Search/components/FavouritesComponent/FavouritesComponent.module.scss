@@ -1,0 +1,11 @@
+.main{
+  @apply w-full h-[381px] mt-6 bg-white rounded-[16px] p-8;
+
+  .header{
+    @apply font-roboto text-[#424242] text-[24px]
+  }
+
+  .fav_container{
+    @apply w-full h-[260px] overflow-x-scroll scrollbar-thin overflow-scroll scrollbar-thumb-[#41522E] pr-2
+  }
+}

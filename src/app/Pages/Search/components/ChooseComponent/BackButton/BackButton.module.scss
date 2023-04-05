@@ -1,0 +1,11 @@
+.main{
+  @apply m-8 cursor-pointer;
+
+  .text{
+    @apply pr-[10px] inline text-[#41522E]
+  }
+
+  .svg{
+    @apply h-6 w-6 inline stroke-current stroke-1 fill-none
+  }
+}

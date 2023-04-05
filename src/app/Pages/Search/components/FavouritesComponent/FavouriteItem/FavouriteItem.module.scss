@@ -1,0 +1,31 @@
+.main{
+  @apply w-full h-[100px] flex pr-3 border-b border-b-[#878787] relative mt-2;
+
+  .header{
+    @apply w-full h-full;
+  
+    .footer{
+      @apply flex justify-between;
+
+      .stars_container{
+        @apply flex my-3;
+      }
+
+      .price_container{
+        @apply flex items-center w-2/5 justify-around;
+
+        .price{
+          @apply text-[11px] text-[#878787]
+        }
+
+        .price_number{
+          @apply text-[17px] text-[#424242]
+        }
+      }
+    }
+  }
+
+  .heart_container{
+    @apply absolute top-0 right-0
+  }
+}

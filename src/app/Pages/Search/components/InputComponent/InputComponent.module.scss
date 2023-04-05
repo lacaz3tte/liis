@@ -1,0 +1,15 @@
+.main{
+  @apply w-full h-[410px] bg-white rounded-[16px] p-8 flex flex-col items-center gap-8;
+
+  .label{
+    @apply font-roboto;
+  }
+
+  .input{
+    @apply border border-[#C9CACC] w-[296px] h-[50px] p-[15px] outline-none rounded-[4px];
+  }
+
+  .button{
+    @apply w-full h-full p-[7px] rounded-[4px] hover:opacity-80 hover:cursor-pointer text-white font-roboto text-[16px] font-normal bg-gradient-to-r from-[#41522E] to-[#BE8022] active:brightness-[0.80]
+  }
+}
