@@ -1,7 +1,6 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
-import { GetHotel } from '../interfaces';
 
 interface DataState {
   city:string,

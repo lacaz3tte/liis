@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+
 import styles from './ChooseComponent.module.scss'
-import { useAppDispatch, useAppSelector } from '../../../../hooks'
+import { useAppSelector } from '../../../../hooks'
 import { selectedHotels } from '../../../../store/hotels.slice'
 import ChooseItem from './ChooseItem/ChooseItem'
 import { favHotels } from '../../../../store/fav.slice'

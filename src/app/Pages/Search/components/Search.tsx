@@ -1,6 +1,4 @@
-import React from 'react'
-import FavouritesHotels from './FavouritesComponent/FavouriteItem/FavouritesItem'
-import SearchedHotels from './ChooseComponent/ChooseItem/ChooseItem'
+
 import SearchComponent from './InputComponent/InputComponent'
 import FavouritesComponent from './FavouritesComponent/FavouritesComponent'
 import ChooseComponent from './ChooseComponent/ChooseComponent'
