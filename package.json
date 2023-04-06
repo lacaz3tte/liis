@@ -1,7 +1,7 @@
 {
   "name": "my",
   "version": "0.1.0",
-  "homepage": "https://lacaz3tte.github.io/liis",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
