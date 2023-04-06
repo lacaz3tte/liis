@@ -5,6 +5,10 @@
     @apply font-roboto text-[#424242] text-[24px]
   }
 
+  .sort_buttons_container{
+    @apply h-[28px] inline-flex mr-2  border-[1px] rounded items-center justify-between px-3
+  }
+
   .fav_container{
     @apply w-full h-[260px] overflow-x-scroll scrollbar-thin overflow-scroll scrollbar-thumb-[#41522E] pr-2
   }

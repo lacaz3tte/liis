@@ -7,6 +7,7 @@ import { favHotels } from '../../../../store/fav.slice'
 import { dataHotels } from '../../../../store/data.slice'
 import Arrow from './ChooseItem/Arrow/Arrow'
 import { changeDate } from './changeDate'
+import { correctEnding } from './correctEnding'
 
 const ChooseComponent = () => {
 
@@ -30,7 +31,7 @@ const ChooseComponent = () => {
         <div className={styles.image + "  bg-[url('../public/m4.jpg')]"} />
         <div className={styles.image + "  bg-[url('../public/m5.jpg')]"} />
       </div>
-      <label className={styles.number_of_fav}>{'Добавлено в Избранное: ' +  hotelsFavs.fav.length +  ' отеля'}</label>
+      <label className={styles.number_of_fav}>{'Добавлено в Избранное: ' +  hotelsFavs.fav.length + correctEnding(hotelsFavs.fav.length)}</label>
       <div className={styles.hotels_container}>
         {
           hotelsSearch.hotels && hotelsSearch.hotels.map((e:any)=>{

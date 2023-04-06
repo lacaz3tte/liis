@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FavouritesHotels from './FavouriteItem/FavouritesItem'
 import styles from './FavouritesComponent.module.scss'
 import { useAppSelector } from '../../../../hooks';
@@ -12,19 +12,27 @@ const FavouritesComponent = () => {
 
   const hotelsFavs = useAppSelector(favHotels)
 
+  const [pushedButton,setPushedButton] = useState('')
+
+  useEffect(()=>{console.log(pushedButton)},[pushedButton])
+
   return (
     <div className={styles.main}>
       <p className={styles.header}>Избранное</p>
       <div className='w-full h-7 '>
-        <div className='h-[28px] w-[71px] inline-flex mr-2 border-[#41522E] border-[1px] rounded items-center justify-around'>
-          <p className='text-[14px]'>Рейтинг</p>
+        <div className={styles.sort_buttons_container + (pushedButton == 'rait' ? ' border-[#41522E]' : ' border-[#E5E5E5]')}
+          onClick={()=>{setPushedButton('rait')}}
+        >
+          <p className={'text-[14px]'+(pushedButton == 'rait' ? ' text-[#41522E]' : ' text-[#E5E5E5]')}>Рейтинг</p>
           <div>
             <UpButton onClick={sortByReitUp} />
             <DownButton onClick={sortByReitDown} />
           </div>
         </div>
-        <div className='h-[28px] w-[71px] inline-flex mx-2 border-[#41522E] border-[1px] rounded items-center justify-around'>
-          <p className='text-[14px]'>Цена</p>
+        <div className={styles.sort_buttons_container + (pushedButton == 'price' ? ' border-[#41522E]' : ' border-[#E5E5E5]')}
+          onClick={()=>{setPushedButton('price')}}
+        >
+          <p className={'text-[14px]'+(pushedButton == 'price' ? ' text-[#41522E]' : ' text-[#E5E5E5]')}>Цена</p>
           <div>
             <UpButton onClick={sortByPriceUp} />
             <DownButton onClick={sortByPriceDown} />
