@@ -1,26 +1,33 @@
 .bg{
   @apply bg-center absolute top-0 left-0 w-full h-full bg-cover;
+  foo: bar;
 
   .bg_opacity{
     @apply absolute top-0 left-0 w-full h-full bg-cover bg-white bg-opacity-60 flex items-center justify-center;
+    foo: bar;
 
     .container{
       @apply w-[409px] h-[382px] bg-white p-8 flex flex-col items-center justify-between rounded-2xl shadow-[0_4px_33px_rgba(0,0,0,0.04)];
+      foo: bar;
 
       .label{
-        @apply font-roboto
+        @apply font-roboto;
+        foo: bar;
       }
 
       .input{
-        @apply border border-[#C9CACC] w-[345px] h-[50px] p-[15px] outline-none rounded-[4px]
+        @apply border border-[#C9CACC] w-[345px] h-[50px] p-[15px] outline-none rounded-[4px];
+        foo: bar;
       }
 
       .error{
-        @apply text-[12px] font-roboto text-[#EB1717] h-[12px]
+        @apply text-[12px] font-roboto text-[#EB1717] h-[12px];
+        foo: bar;
       }
 
       .button{
-        @apply w-full p-[7px] rounded-[4px] hover:opacity-80 h-[50px] hover:cursor-pointer text-white font-roboto text-[16px] font-normal bg-gradient-to-r from-[#41522E] to-[#BE8022] active:brightness-[0.80]
+        @apply w-full p-[7px] rounded-[4px] hover:opacity-80 h-[50px] hover:cursor-pointer text-white font-roboto text-[16px] font-normal bg-gradient-to-r from-[#41522E] to-[#BE8022] active:brightness-[0.80];
+        foo: bar;
       }
     }
   }

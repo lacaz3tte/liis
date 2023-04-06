@@ -1,20 +1,25 @@
 .header{
   @apply absolute top-0 left-0 right-0 h-[92px] flex justify-between items-center bg-[#E5E5E5];
+  foo: bar;
 
   .project_name{
     @apply font-roboto m-8;
+    foo: bar;
   }
 
 }
 
 .body{
   @apply absolute top-[92px] left-0 right-0 bottom-0 flex justify-center bg-[#E5E5E5];
+  foo: bar;
 
   .container{
     @apply w-[1048px] mb-[30px] flex justify-between;
+    foo: bar;
 
     .left_side{
       @apply w-[360px] h-full;
+      foo: bar;
     }
   }
 }

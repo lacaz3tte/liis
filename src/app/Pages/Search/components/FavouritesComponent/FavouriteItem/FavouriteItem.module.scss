@@ -1,25 +1,32 @@
 .main{
   @apply w-full h-[100px] flex pr-3 border-b border-b-[#878787] relative mt-2;
+  foo: bar;
 
   .header{
     @apply w-full h-full;
+    foo: bar;
   
     .footer{
       @apply flex justify-between;
+      foo: bar;
 
       .stars_container{
         @apply flex my-3;
+        foo: bar;
       }
 
       .price_container{
         @apply flex items-center w-2/5 justify-around;
+        foo: bar;
 
         .price{
-          @apply text-[11px] text-[#878787]
+          @apply text-[11px] text-[#878787];
+          foo: bar;
         }
 
         .price_number{
-          @apply text-[17px] text-[#424242]
+          @apply text-[17px] text-[#424242];
+          foo: bar;
         }
       }
     }

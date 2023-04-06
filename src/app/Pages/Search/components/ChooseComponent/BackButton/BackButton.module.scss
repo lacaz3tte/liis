@@ -1,11 +1,14 @@
 .main{
   @apply m-8 cursor-pointer;
+  foo: bar;
 
   .text{
-    @apply pr-[10px] inline text-[#41522E]
+    @apply pr-[10px] inline text-[#41522E];
+    foo: bar;
   }
 
   .svg{
-    @apply h-6 w-6 inline stroke-current stroke-1 fill-none
+    @apply h-6 w-6 inline stroke-current stroke-1 fill-none;
+    foo: bar;
   }
 }

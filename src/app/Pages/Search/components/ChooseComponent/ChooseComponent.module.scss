@@ -1,32 +1,40 @@
 .main{
   @apply w-[664px] h-full bg-white rounded-[16px] p-8;
+  foo: bar;
 
   .header{
     @apply w-full h-20 flex items-center justify-between;
+    foo: bar;
 
     .hotels{
       @apply text-[32px] font-roboto text-[#424242] inline;
+      foo: bar;
     }
 
     .date{
       @apply text-[#41522E] font-roboto text-[24px];
+      foo: bar;
     }
   }
 
   .images_container{
     @apply w-full h-48 overflow-y-hidden overflow-x-scroll whitespace-nowrap scrollbar-thin scrollbar-thumb-[#41522E] p-4;
+    foo: bar;
 
     .image{
-      @apply h-40 w-40 bg-cover overflow-hidden  bg-center inline-block rounded-[10px] mr-5
+      @apply h-40 w-40 bg-cover overflow-hidden  bg-center inline-block rounded-[10px] mr-5;
+      foo: bar;
     }
   }
 
   .number_of_fav{
-    @apply font-roboto font-normal text-[17px]
+    @apply font-roboto font-normal text-[17px];
+    foo: bar;
   }
 
   .hotels_container{
-    @apply w-full h-[432px] overflow-x-scroll scrollbar-thin overflow-scroll scrollbar-thumb-[#41522E] pr-2
+    @apply w-full h-[432px] overflow-x-scroll scrollbar-thin overflow-scroll scrollbar-thumb-[#41522E] pr-2;
+    foo: bar;
   }
 
 
