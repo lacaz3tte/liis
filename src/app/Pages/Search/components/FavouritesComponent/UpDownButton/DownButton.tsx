@@ -20,8 +20,8 @@ const DownButton = ({onClick,change,value,hookVal}:IData) => {
   }
   
   return (
-    <div onClick={()=>{push()}}>  
-      <svg className={styles.button + (hookVal===value ? ' text-[#41522E]' : '') }  viewBox="0 0 24 24" strokeLinecap="round"  strokeLinejoin="round" >    
+    <div onClick={()=>{push()}}>
+      <svg className={styles.button + (hookVal===value ? ' text-[#41522E] opacity-[100%]' : '') }  viewBox="0 0 24 24" strokeLinecap="round"  strokeLinejoin="round" >    
         <polyline points="6 9 12 15 18 9" />
       </svg>
     </div>
