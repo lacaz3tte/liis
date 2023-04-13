@@ -1,7 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Login.module.scss'
 import { useNavigate } from 'react-router-dom';
-
 const Login = () => {
 
   const [email, setEmail] = useState('')
@@ -9,6 +8,7 @@ const Login = () => {
 
   const [validEmail, setValidEmail] = useState(true)
   const [validPassword, setValidPassword] = useState(true)
+  const [cyrillic,setCyrillic] = useState(true)
 
   const validateEmail = (email: string) => {
     let re = /\S+@\S+\.\S+/
@@ -17,6 +17,14 @@ const Login = () => {
 
   const validatePassword = (password: string) => {
     return password.length>7;
+  }
+
+  const checkCyrillic = (password: string) => {
+    var re = /[а-яё]/i
+    if(re.test(password)){
+      return false
+    }
+    return true
   }
 
   const navigate = useNavigate()
@@ -34,6 +42,11 @@ const Login = () => {
       setValidPassword(true)
     }
     if(validEmail && validPassword){
+      setCyrillic(false)
+    } else {
+      setCyrillic(true)
+    } 
+    if(validateEmail(email) && validatePassword(password) && checkCyrillic(password)){
       navigate('/search')
     }
   }
@@ -49,9 +62,9 @@ const Login = () => {
             <p className={styles.error}>{(validEmail ? '': 'Неверная почта' )}</p>
           </div>
           <div>
-            <label className={(validPassword ? 'text-[#424242] ': 'text-[#EB1717]' )}>Пароль</label>
-            <input type='text' value={password} onChange={(e) => { setPassword(e.target.value) }} className={styles.input + (validPassword ? ' text-[#424242] ': ' text-[#EB1717]' )}></input>
-            <p className={styles.error}>{(validPassword ? '': 'Неверный пароль' )}</p>
+            <label className={(validPassword && cyrillic ? 'text-[#424242] ': 'text-[#EB1717]' )}>Пароль</label>
+            <input type='text' value={password} onChange={(e) => { setPassword(e.target.value) }} className={styles.input + (validPassword && cyrillic ? ' text-[#424242] ': ' text-[#EB1717]' )}></input>
+            <p className={styles.error}>{(validPassword ? (cyrillic?'':'Введена кириллица'): 'Пароль меньше 8 символов' )}</p>
           </div>
           <button className={styles.button} onClick={()=>{enter()}}>Войти</button>
         </div>

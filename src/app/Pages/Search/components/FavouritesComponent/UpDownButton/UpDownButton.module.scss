@@ -1,9 +1,4 @@
 .button{
-  @apply h-4 w-4 text-[#41522E] stroke-current stroke-1 fill-none cursor-pointer;
+  @apply h-4 w-4 opacity-[42%] stroke-current stroke-1 fill-none cursor-pointer;
   foo: bar;
-  
-  &:not(:active){
-    @apply text-[#000000] opacity-[42%];
-    foo: bar;
-  }
 }
