@@ -21,7 +21,7 @@ const UpButton = ({onClick,change,value,hookVal}:IData) => {
 
   return (
     <div onClick={()=>{push()}}> 
-      <svg className={styles.button + (hookVal===value ? ' text-[#41522E] opacity-[100%]' : '')}  viewBox="0 0 24 24" strokeLinecap="round"  strokeLinejoin="round" >  
+      <svg className={styles.button + (hookVal===value ? ' text-[#41522E] opacity-[100%]' : ' opacity-[42%]')}  viewBox="0 0 24 24" strokeLinecap="round"  strokeLinejoin="round" >  
         <polyline points="18 15 12 9 6 15" />
       </svg>
     </div>

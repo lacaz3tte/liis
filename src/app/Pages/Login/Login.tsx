@@ -8,45 +8,39 @@ const Login = () => {
 
   const [validEmail, setValidEmail] = useState(true)
   const [validPassword, setValidPassword] = useState(true)
-  const [cyrillic,setCyrillic] = useState(true)
-
-  const validateEmail = (email: string) => {
-    let re = /\S+@\S+\.\S+/
-    return re.test(email);
-  }
-
-  const validatePassword = (password: string) => {
-    return password.length>7;
-  }
+  const [cyrillic, setCyrillic] = useState(true)
 
   const checkCyrillic = (password: string) => {
     var re = /[а-яё]/i
-    if(re.test(password)){
-      return false
-    }
-    return true
+    return !re.test(password)
+  }
+  const validateEmail = (email: string) => {
+    let re = /\S+@\S+\.\S+/
+    return re.test(email) && checkCyrillic(email);
   }
 
+  const validatePassword = (password: string) => {
+    return password.length > 7;
+  }
   const navigate = useNavigate()
 
-
   const enter = () => {
-    if(!validateEmail(email)){
+    if (!validateEmail(email)) {
       setValidEmail(false)
     } else {
       setValidEmail(true)
     }
-    if(!validatePassword(password)){
+    if (!validatePassword(password)) {
       setValidPassword(false)
     } else {
       setValidPassword(true)
     }
-    if(validEmail && validPassword){
+    if (!checkCyrillic(password)) {
       setCyrillic(false)
     } else {
       setCyrillic(true)
-    } 
-    if(validateEmail(email) && validatePassword(password) && checkCyrillic(password)){
+    }
+    if (validateEmail(email) && validatePassword(password) && checkCyrillic(password)) {
       navigate('/search')
     }
   }
@@ -57,16 +51,16 @@ const Login = () => {
         <div className={styles.container}>
           <label className={styles.label}>Simple Hotel Check</label>
           <div>
-            <label className={(validEmail ? 'text-[#424242] ': 'text-[#EB1717]' )}>Логин</label>
-            <input type='text' value={email} onChange={(e) => { setEmail(e.target.value) }} className={styles.input + (validEmail ? ' text-[#424242] ': ' text-[#EB1717]' )}></input>
-            <p className={styles.error}>{(validEmail ? '': 'Неверная почта' )}</p>
+            <label className={(validEmail ? 'text-[#424242] ' : 'text-[#EB1717]')}>Логин</label>
+            <input type='text' value={email} onChange={(e) => { setEmail(e.target.value) }} className={styles.input + (validEmail ? ' text-[#424242] ' : ' text-[#EB1717]')}></input>
+            <p className={styles.error}>{(validEmail ? '' : 'Неверная почта')}</p>
           </div>
           <div>
-            <label className={(validPassword && cyrillic ? 'text-[#424242] ': 'text-[#EB1717]' )}>Пароль</label>
-            <input type='text' value={password} onChange={(e) => { setPassword(e.target.value) }} className={styles.input + (validPassword && cyrillic ? ' text-[#424242] ': ' text-[#EB1717]' )}></input>
-            <p className={styles.error}>{(validPassword ? (cyrillic?'':'Введена кириллица'): 'Пароль меньше 8 символов' )}</p>
+            <label className={(validPassword && cyrillic ? 'text-[#424242] ' : 'text-[#EB1717]')}>Пароль</label>
+            <input type='text' value={password} onChange={(e) => { setPassword(e.target.value) }} className={styles.input + (validPassword && cyrillic ? ' text-[#424242] ' : ' text-[#EB1717]')}></input>
+            <p className={styles.error}>{(validPassword ? (cyrillic ? '' : 'Введена кириллица') : 'Пароль меньше 8 символов')}</p>
           </div>
-          <button className={styles.button} onClick={()=>{enter()}}>Войти</button>
+          <button className={styles.button} onClick={() => { enter() }}>Войти</button>
         </div>
 
       </div>
